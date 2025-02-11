@@ -10,6 +10,13 @@
             
             let dob = new Date(dobInput);
             let today = new Date();
+    if (dob > today) {
+    result.innerText = "Date cannot be in the future";
+    result.style.color = "red";
+    result.style.display = "block";
+    return;
+}
+
             
             let ageYears = today.getFullYear() - dob.getFullYear();
             let ageMonths = today.getMonth() - dob.getMonth();
@@ -24,6 +31,11 @@
                 ageMonths += 12;
             }
             
-            result.innerText = `Your Age: ${ageYears} Years, ${ageMonths} Months, and ${ageDays} Days`;
-            result.style.color = "green";
+           if (dob > today) {
+    result.innerText = "Date cannot be in the future";
+    result.style.color = "red";
+    result.style.display = "block";
+    return;
+}
+
         }
