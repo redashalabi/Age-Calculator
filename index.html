@@ -1,21 +1,19 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Age Calculator</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>حاسبة العمر</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="container">
-        <h1>Age Calculator</h1>
-        <label for="dob">Enter your Date of Birth:</label>
-        <input type="date" id="dob" required>
-        <button onclick="calculateAge()">Calculate Age</button>
-        <div id="result"></div>
+        <h2>حاسبة العمر</h2>
+        <label for="dob">أدخل تاريخ ميلادك:</label>
+        <input type="date" id="dob">
+        <button onclick="calculateAge()">احسب العمر</button>
+        <p id="result"></p>
     </div>
-
-    <script src="calculateAge.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
