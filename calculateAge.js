@@ -1,14 +1,19 @@
- function calculateAge() {
-            let dob = document.getElementById('dob').value;
-            if (dob === "") {
-                document.getElementById('result').innerText = "يرجى إدخال تاريخ الميلاد";
+  function calculateAge() {
+            let dobInput = document.getElementById('dob').value;
+            let result = document.getElementById('result');
+            
+            if (!dobInput) {
+                result.innerText = "Please enter a valid date";
+                result.style.color = "red";
                 return;
             }
-            let dobDate = new Date(dob);
+            
+            let dob = new Date(dobInput);
             let today = new Date();
-            let ageYears = today.getFullYear() - dobDate.getFullYear();
-            let ageMonths = today.getMonth() - dobDate.getMonth();
-            let ageDays = today.getDate() - dobDate.getDate();
+            
+            let ageYears = today.getFullYear() - dob.getFullYear();
+            let ageMonths = today.getMonth() - dob.getMonth();
+            let ageDays = today.getDate() - dob.getDate();
             
             if (ageDays < 0) {
                 ageMonths--;
@@ -19,5 +24,6 @@
                 ageMonths += 12;
             }
             
-            document.getElementById('result').innerText = `عمرك هو ${ageYears} سنة و ${ageMonths} شهر و ${ageDays} يوم`;
+            result.innerText = `Your Age: ${ageYears} Years, ${ageMonths} Months, and ${ageDays} Days`;
+            result.style.color = "green";
         }
